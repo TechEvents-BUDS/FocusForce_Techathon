@@ -113,9 +113,9 @@ class LoginPage extends StatelessWidget {
                       SquareButton(
                         text: "Login",
                         onTap: () async {
-                          final apis = Get.find<ApiServices>();
-                          await apis.getLoggedIn();
-                          // Get.toNamed('/view');
+                          //final apis = Get.find<ApiServices>();
+                          // await apis.getLoggedIn();
+                           Get.toNamed('/view');
                         },
                       ),
                     ],
