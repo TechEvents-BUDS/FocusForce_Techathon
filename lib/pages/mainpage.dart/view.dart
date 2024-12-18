@@ -99,10 +99,10 @@ class MainPageLowerBody extends StatelessWidget {
                 color: AppColors.scaffoldBgColor,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.greyColor, // Shadow color
-                    spreadRadius: 2, // How much the shadow spreads
-                    blurRadius: 5, // Softness of the shadow
-                    offset: Offset(0, 3), // Position of the shadow (x, y)
+                    color: AppColors.greyColor,
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3),
                   ),
                 ],
               ),
@@ -125,14 +125,18 @@ class MainPageLowerBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              OptionTabs(
-                icon_: Icon(Icons.calendar_today),
-                text_: "Attandance",
-              ),
-              OptionTabs(icon_: Icon(Icons.assignment), text_: "Assignment"),
+              OptionTabs(icon_: Icons.calendar_today, text_: "Attandance"),
+              OptionTabs(icon_: Icons.assignment, text_: "Assignment"),
             ],
           ),
-         
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              OptionTabs(icon_: Icons.note_sharp, text_: "Lecturs Notes "),
+              OptionTabs(icon_: Icons.schedule, text_: "TimeTable"),
+            ],
+          ),
         ],
       ),
     );
@@ -140,7 +144,7 @@ class MainPageLowerBody extends StatelessWidget {
 }
 
 class OptionTabs extends StatelessWidget {
-  final Icon icon_;
+  final IconData icon_;
   final String text_;
   const OptionTabs({super.key, required this.icon_, required this.text_});
 
@@ -168,7 +172,7 @@ class OptionTabs extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            icon_,
+            Icon(icon_, size: 35, color: AppColors.WhiteColor),
             SizedBox(height: 10),
             Text(text_, style: popupheader),
           ],

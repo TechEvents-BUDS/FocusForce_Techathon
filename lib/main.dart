@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.lazyPut<LoginController>(() => LoginController());
-    Get.lazyPut<Apiservices>(() => Apiservices());
+    Get.lazyPut<ApiServices>(() => ApiServices());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/view",
+      initialRoute: "/splash",
       getPages: MyAppRoutes.routes,
     );
   }

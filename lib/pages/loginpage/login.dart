@@ -16,6 +16,12 @@ final List<Map<String, String>> roles = [
   {'option': 'Admin', 'value': 'admin'},
   {'option': 'Teacher', 'value': 'teacher'},
   {'option': 'Student', 'value': 'student'},
+];
+
+final List<Map<String, String>> institues = [
+  {'option': 'Karachi', 'value': '2'},
+  {'option': 'Islambad', 'value': '--'},
+  {'option': 'Lahore', 'value': '--'},
 ]; //
 
 class LoginPage extends StatelessWidget {
@@ -91,7 +97,7 @@ class LoginPage extends StatelessWidget {
 
                       CustomDropdown(
                         labelText: "Select Institute",
-                        options: roles,
+                        options: institues,
                         selectedValue: selectedRoleValue,
                       ),
                       SizedBox(height: 20),
@@ -107,30 +113,11 @@ class LoginPage extends StatelessWidget {
                       SquareButton(
                         text: "Login",
                         onTap: () async {
-                          // final apis = Get.find<Apiservices>();
-                          // await apis.getLogedIn();
-
-                          Get.toNamed('/view');
+                          final apis = Get.find<ApiServices>();
+                          await apis.getLoggedIn();
+                          // Get.toNamed('/view');
                         },
                       ),
-
-                      // Row(
-                      //   mainAxisAlignment: MainAxisAlignment.end,
-                      //   children: [
-                      //     TextButton(
-                      //       onPressed: () {},
-                      //       child: Text(
-                      //         "Forget Password",
-                      //         style: TextStyle(
-                      //           fontSize: 18,
-                      //           color: AppColors.primaryColor,
-                      //           decorationColor: AppColors.primaryColor,
-                      //           decoration: TextDecoration.underline,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
                     ],
                   ),
                 ),
